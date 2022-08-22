@@ -28,16 +28,31 @@ public class T11 {
          */
         /**
         方法二：穷举法
+         int b=0;
+         for(int i=0;i!=-1;){
+         if(b*b>=x){
+         i=-1;
+         }else {
+         b++;
+         }
+         }
          */
+/**
+ * 方法三:二分法
+ */
+        int low=0;
+        int high=x;
         int b=0;
-        for(int i=0;i!=-1;){
-            if(b*b>=x){
-                i=-1;
+        while (b==0){
+            int mid=(low+high)/2;
+            if (mid*mid>x){
+                high = mid-1;
+            }else if(mid*mid<x){
+                low=mid+1;
             }else {
-                b++;
+                b=mid;
             }
-        }
-        
+        }            
         System.out.println("该数的平方根为："+b);
 
     }
