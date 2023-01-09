@@ -16,4 +16,15 @@ ListNode mergeKLists(ListNode[] lists) {
     if(head != null)
       pq.add(head);
      }
-     while ()
+     while (!pq.isEmpty()) {
+      //获取最小节点,接到结果链表中
+      ListNode node = pq.poll();
+      p.next = node;
+      if (node.next != null) {
+        pq.add(node.next);
+      }
+      //p指针不断前进
+      p = p.next;
+     }
+     return dummy.next;
+    }
